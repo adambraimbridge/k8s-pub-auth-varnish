@@ -1,0 +1,13 @@
+# Default values for k8s-pub-auth-varnish.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+service:
+  name: "" # The name of the service, should be defined in the specific app-configs folder.
+  certificateAwsArn: "" # The ARN of the aws certificate use by the ELB created for this service
+  htpasswdSecret: "" # The Kubernetes secret containing the contents of the .htpasswd file used for authentication.
+replicaCount: 3
+image:
+  repository: coco/k8s-pub-auth-varnish
+  pullPolicy: IfNotPresent
+elbRegistrator:
+  image: "coco/coco-elb-dns-registrator:k8s_v0.0.4"
