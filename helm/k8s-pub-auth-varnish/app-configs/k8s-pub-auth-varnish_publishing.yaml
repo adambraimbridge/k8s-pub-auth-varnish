@@ -1,0 +1,6 @@
+# Values used for the deployed application.
+replicaCount: 3
+service:
+  name: auth-varnish
+  certificateAwsArn: "arn:aws:iam::027104099916:server-certificate/wildcard.ft.com"
+  htpasswdSecret: "pub-varnish-auth"
