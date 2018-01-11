@@ -54,6 +54,10 @@ sub vcl_recv {
         return (pass);
     }
 
+    if ("SL_API_KEY" != "" && req.url ~ "^\/__smartlogic-notifier\/notify.*apiKey=SL_API_KEY.*$") {
+        return(pass);
+    }
+
     if (!basicauth.match("/etc/varnish/auth/.htpasswd",  req.http.Authorization)) {
         return(synth(401, "Authentication required"));
     }
