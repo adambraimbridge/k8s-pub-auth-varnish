@@ -22,6 +22,12 @@ spec:
       - name: {{ .Values.service.name }} 
         image: "{{ .Values.image.repository }}:{{ .Chart.Version }}"
         imagePullPolicy: {{ .Values.image.pullPolicy }}
+        env:
+        - name: SL_API_KEY
+          valueFrom:
+            secretKeyRef:
+              name: global-secrets
+              key: smartlogic.varnish-api-key
         ports: 
         - containerPort: 80 
         livenessProbe: 
