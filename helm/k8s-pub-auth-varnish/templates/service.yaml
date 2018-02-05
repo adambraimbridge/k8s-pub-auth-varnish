@@ -4,6 +4,9 @@ metadata:
   name: {{.Values.service.name}} 
   annotations:
     service.beta.kubernetes.io/aws-load-balancer-ssl-cert: {{.Values.service.certificateAwsArn}}
+    service.beta.kubernetes.io/aws-load-balancer-ssl-ports: "443"
+    service.beta.kubernetes.io/aws-load-balancer-backend-protocol: http
+    
   labels:
     chart: "{{ .Chart.Name | trunc 63 }}"
     chartVersion: "{{ .Chart.Version | trunc 63 }}"
