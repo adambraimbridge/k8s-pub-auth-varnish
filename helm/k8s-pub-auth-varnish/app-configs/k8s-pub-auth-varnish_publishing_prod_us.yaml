@@ -2,3 +2,12 @@
 service:
   name: auth-varnish
   certificateAwsArn: "arn:aws:acm:us-east-1:469211898354:certificate/bde07970-60f9-4683-a367-fdf05b276b0a"
+
+elb:
+  tags: "systemCode=upp,teamDL=universal.publishing.platform@ft.com,environment=p"
+
+s3:
+  bucketName: "content-prod-elb-access-logs-us-east-1"
+  prefix: "upp-prod-publish-us/pub-auth-varnish"
+  enabled: "true"
+  interval: "5"
