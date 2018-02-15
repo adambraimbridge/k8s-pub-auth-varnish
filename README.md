@@ -21,6 +21,7 @@ name is updated even if the ELB is recreated. See [k8s job file](/helm/k8s-pub-a
 - global-config:
     - dns_subdomain : the DNS name where the cluster should be reachable
     - k8s.app_namespace : the k8s namespace where the app lives
+    - aws.region: the aws region of the cluster
 
 #### Secret keys used
 
