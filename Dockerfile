@@ -1,4 +1,4 @@
-FROM alpine:3.8
+FROM alpine:3.7
 
 ENV VARNISHSRC=/usr/include/varnish VMODDIR=/usr/lib/varnish/vmods
 
