@@ -10,4 +10,4 @@ image:
   repository: coco/k8s-pub-auth-varnish
   pullPolicy: IfNotPresent
 elbRegistrator:
-  image: "coco/coco-elb-dns-registrator:5.0.1"
+  image: "coco/coco-elb-dns-registrator:5.1.0"
