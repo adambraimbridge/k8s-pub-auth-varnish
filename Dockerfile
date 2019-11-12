@@ -2,7 +2,7 @@ FROM alpine:3.9
 
 ENV VARNISHSRC=/usr/include/varnish VMODDIR=/usr/lib/varnish/vmods
 
-RUN apk --update add varnish varnish-dev git automake autoconf libtool python make py-docutils curl jq && \
+RUN apk --update add varnish varnish-dev git automake autoconf libtool python3 make py-docutils curl jq && ln -s /usr/bin/python3 /usr/bin/python && \
   cd / && echo "-------basicauth-build-------" && \
   git clone http://git.gnu.org.ua/repo/vmod-basicauth.git && \
   cd vmod-basicauth && \
@@ -16,7 +16,7 @@ RUN apk --update add varnish varnish-dev git automake autoconf libtool python ma
   ./configure && \
   make && \
   make install && \
-  apk del git automake autoconf libtool python make py-docutils && \
+  apk del git automake autoconf libtool python3 make py-docutils && \
   rm -rf /var/cache/apk/* /vmod-basicauth
 
 COPY default.vcl /etc/varnish/default.vcl
