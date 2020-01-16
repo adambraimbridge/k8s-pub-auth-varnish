@@ -49,11 +49,6 @@ sub vcl_recv {
         return(synth(200, "robots"));
     }
 
-    if (req.url ~ "^\__gtg\?categories.*$") { 
-        set req.backend_hint = health_check_service;
-        return (pass);
-    }
-
     if ((req.url ~ "^\/__health.*$") || (req.url ~ "^\/__gtg.*$")) { 
         if ((req.url ~ "^\/__health\/(dis|en)able-category.*$") || (req.url ~ "^\/__health\/.*-ack.*$")) {
             if (!basicauth.match("/etc/varnish/auth/.htpasswd",  req.http.Authorization)) {
@@ -94,17 +89,17 @@ Disallow: /"});
     }
 }
 
-sub vcl_backend_response {
+# sub vcl_backend_response {
     # Happens after we have read the response headers from the backend.
     #
     # Here you clean the response headers, removing silly Set-Cookie headers
     # and other mistakes your backend does.
-    if (((beresp.status == 500) || (beresp.status == 502) || (beresp.status == 503) || (beresp.status == 504)) && (bereq.method == "GET" )) {
-        if (bereq.retries < 2 ) {
-            return(retry);
-        }
-    }
-}
+#     if (((beresp.status == 500) || (beresp.status == 502) || (beresp.status == 503) || (beresp.status == 504)) && (bereq.method == "GET" )) {
+#         if (bereq.retries < 2 ) {
+#             return(retry);
+#         }
+#     }
+# }
 
 sub vcl_deliver {
     # Happens when we have all the pieces we need, and are about to send the
