@@ -49,6 +49,11 @@ sub vcl_recv {
         return(synth(200, "robots"));
     }
 
+    if ((req.url ~ "^\__gtg\?categories.*$") { 
+        set req.backend_hint = health_check_service;
+        return (pass);
+    }
+
     if ((req.url ~ "^\/__health.*$") || (req.url ~ "^\/__gtg.*$")) { 
         if ((req.url ~ "^\/__health\/(dis|en)able-category.*$") || (req.url ~ "^\/__health\/.*-ack.*$")) {
             if (!basicauth.match("/etc/varnish/auth/.htpasswd",  req.http.Authorization)) {
