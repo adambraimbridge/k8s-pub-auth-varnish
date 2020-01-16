@@ -49,7 +49,7 @@ sub vcl_recv {
         return(synth(200, "robots"));
     }
 
-    if ((req.url ~ "^\__gtg\?categories.*$") { 
+    if (req.url ~ "^\__gtg\?categories.*$") { 
         set req.backend_hint = health_check_service;
         return (pass);
     }
