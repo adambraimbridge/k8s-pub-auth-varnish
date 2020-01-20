@@ -88,7 +88,7 @@ sub vcl_recv {
                 return(synth(401, "Authentication required"));
             }
         }
-        set req.backend_hint = health_check_service;
+        set req.backend_hint = healthdirector.backend();
         return (pass);
     }
 
