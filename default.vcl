@@ -6,10 +6,6 @@ import std;
 import saintmode;
 import directors;
 
-backend health_check_service {
-  .host = "upp-aggregate-healthcheck";
-  .port = "8080";
-}
 
 backend health_check_service {
   .host = "upp-aggregate-healthcheck";
