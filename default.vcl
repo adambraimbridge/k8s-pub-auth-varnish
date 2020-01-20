@@ -31,6 +31,11 @@ backend health_check_service-second {
   }
 }
 
+backend default {
+  .host = "path-routing-varnish";
+  .port = "80";
+}
+
 acl purge {
     "localhost";
 }
