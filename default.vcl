@@ -1,6 +1,10 @@
 vcl 4.0;
 
+import vsthrottle;
 import basicauth;
+import std;
+import saintmode;
+import directors;
 
 backend health_check_service {
   .host = "upp-aggregate-healthcheck";
