@@ -9,7 +9,5 @@ replicaCount: 2
 image:
   repository: coco/k8s-pub-auth-varnish
   pullPolicy: IfNotPresent
-elbRegistrator:
-  image: "coco/coco-elb-dns-registrator:5.1.1"
 route53_elb_registrator:
   image: "coco/upp-route53-elb-dns-registrator:1.0.1"
