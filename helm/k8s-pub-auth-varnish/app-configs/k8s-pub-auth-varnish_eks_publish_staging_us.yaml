@@ -1,0 +1,19 @@
+# Values used for the deployed application.
+service:
+  name: auth-varnish
+  certificateAwsArn: "arn:aws:acm:us-east-1:469211898354:certificate/58bea0ec-c4c5-4d21-9009-c086e5cac77f"
+
+eksCluster: true
+
+elb:
+  tags: "systemCode=upp,teamDL=universal.publishing.platform@ft.com,environment=t"
+
+s3:
+  bucketName: "content-prod-elb-access-logs-us-east-1"
+  prefix: "upp-staging-publish-us/pub-auth-varnish"
+  enabled: "true"
+  interval: "5"
+
+encryptedsecrets:
+  .htpasswd: "AgAIVLbnwDowpC6q299J27hlca/UHSM1G0pT1Vyr4XlTWLwOj7RtNhe76/Bk/Ui/Xb2bSsltfOGV9LM1evsuc9FpB0GmA74/9w6R+ZCiiSuLs4qrSBzYF4EXtb8B+f08ev00tTI4jv0oo9e84NRNXqne8JaYA2bnESZeTV32aSqQg4u9Dqssk3J8n4BoEcUgSIpmIF8WWTmTZWkmgShso4o6vvFG3UFGVvaQGx/QICEyOI27bua/tJ1ksfjKbvWD2ZiRPgFDFoxPO8TtwSmjWZlb9H2oWJeNT2MyBKXUZp1mKKP3f/vrZ0zd/K4O1NwoYNXIaPOd9mMPAKECOH9lS9xvzYbfscj4/DPbW+NjkbfrkVYa/HPfq4eIqVoxyk1Krznsl1uIMkerJcvRNtmoljVrxe69jw5JVgXt+9rK/hq+B/JIcLCwwrWmyp44+X2cHsplG7H3jvOtv6mCZ8MQcLYCKgU6SerSVgTGti07CkEATfxIJ2/gkzCRg+l3rIvMmu32ow+8n5o1kozrCue1+elSjF2L8YvzVobqesNqmYDqWsxBgfp+BbeYVG8JQFw+lH3IO1WXxoITvQbYiDvhzElNaJCXhxVG7I9cen9Z3u6SY9ysGYN+FlFk+ajOqmrwQpx1r6J2zdJgpff4Wx7stVnrFr9s6oQ6qJKDsVNEkH/sHIhAQ57VLC7Cyr9DHF3vTyWwy6o5IfLIFRXhdsxTaz7wjVWdYHmEut/9CiOGo91cI6GfbLyuRd2xG1JHZJbDDNvJrfXqQ1fHP6OkXDzPbHQghohftL5xz2Vw0zz619KFooVVTTSl/5apC5bBtLh1+nLzvwJvS3JT5DI2Zk30+5nDJEceU5FGefgiBtIm1AZevxZo0DaJcjLPLx5YvT1QnSQNM/dTyCOW73GLgTGlTd3QBTdPwDU6exLH8pAS0mEPKl+MxB9tt4r63MR15Q887iqkH1cZ7VeaiNNA9THYVidnsi1Ozj9d39JfZNXKEb45RONGcfYZomWfGCGsPvxzWJQ6yCsFvKT/OLrJrSlrOsM/kxPv/VKou5yx1FzywirMFGvN1t0/H18z6mGZAJeTJ9rswo3SK1JRMg=="
+ 
