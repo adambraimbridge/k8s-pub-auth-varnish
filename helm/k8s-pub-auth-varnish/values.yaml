@@ -6,6 +6,9 @@ service:
   certificateAwsArn: "" # The ARN of the aws certificate use by the ELB created for this service
   htpasswdSecret: "pub-varnish-auth" # The Kubernetes secret containing the contents of the .htpasswd file used for authentication.
 replicaCount: 2
+
+eksCluster: false
+
 image:
   repository: coco/k8s-pub-auth-varnish
   pullPolicy: IfNotPresent

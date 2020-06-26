@@ -1,0 +1,16 @@
+# Values used for the deployed application.
+service:
+  name: auth-varnish
+  certificateAwsArn: "arn:aws:acm:eu-west-1:070529446553:certificate/a6ab3d87-cdae-4db4-838f-3dbce570ad47"
+
+eksCluster: true
+
+elb:
+  tags: "systemCode=upp,teamDL=universal.publishing.platform@ft.com,environment=d"
+
+s3:
+  enabled: "false"
+
+encryptedsecrets:
+  .htpasswd: "AgB10acc0iZW0diWuG4MdbQJXmOmEOptu9H3q+gnXthbzF3fhVoSdfdhXq4pa/zYHAp7Cku03rabz8O7uY9XK98iDNhTW8WjfAWoqJfIYoVkfET5m8196AhG6TkD+CjNrcQuOjAaMfW7++xvURP7nOfsHsLRa2EWfjpJZVL5/bdgGx9Y+CbRMr6Whau5nX6TocXETNg0/dPzRO2W/sNxfljv2iGfoz0y3qG1ZJ2v17+edAxfMs3hp+PboPw5+QTwiiyMt5riBLJcpFHAUHlt7uk5Yjf9PsL8c0ulpGska4n26R8rB9CsjxHRb+y7YL4jtLRDihTSq48yoqEh5eW4Uyaa3D/hs+EDRiB571Wvv9bqCOYrGG1yI1Nk9AhhlM+pX7mJbgdKXbe/Ycgxrt4N9eR/brm6/S9279QokorENmlRY3+tIU3WRNtBg3453LPMjM4c1fy+/cnZjRAtOU8pr6J34cOyrOscvtIi90Q3YvgTgwHCF2XQuJQHGf6TH7ts6/vHKXH/4p4BfT0SZZRZDeenVony+J/QH1DR6qn18kBddAkM1INX9xv7QThthP7YCiunoYjdpStpTKU/4t06qjVixCjvIMK+fUIuvfLZXTRrilBDkzxs9RTeIN+BTfHcAqwBW0BasqmUb1ot2tBJ5iX7JQ748pPQUr57Dc4LvfD7eHZUTOXQtQJgOBWI2mBM2p8c3rUinFUcRmihyTRfcl0+NFZz5xZR3HjwXk55YBv/fQWJBko1fC1eNC41jJmmuF4MfizZiMdY1hL8kC79YoZJ1PNgOVwpN7Wco7AquBRZujJzWQ=="
+
